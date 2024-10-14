@@ -1,0 +1,119 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Image } from "astro:assets";
+import originalCards from "../../../assets/images/cards_original.jpg";
+import originalCards2 from "../../../assets/images/2_origin.png";
+import originalCards3 from "../../../assets/images/3_origin.jpg";
+---
+
+<Layout title="Our History">
+  <article>
+    <header>
+      <h1>IDentiFUR's History</h1>
+      <h2>How DFS transformed into IdentiFUR!</h2>
+    </header>
+    <div class="grid">
+      <div>
+        Back in 2002, when the furry fandom was still growing across the
+        internet, a couple creators came up with the company DFS (Department of
+        Furry Safety). It was to produce an informative and fun novelty item in
+        the form of an ID ( or "driver's license" ) for your fursona. We call
+        them Fursonal ID's™ and they became the first of their kind to be
+        distributed.
+        <br />
+        <br />
+        Soon after opening, Fursonal ID's™ caught on and DFS became a popular place
+        to buy these specific products. Over the time of their first official opening
+        back in 2005 the company handmade over 100+ Fursonal ID's™ for furries around
+        the world.
+        <br />
+        <br />
+        After noticing the huge amount of demand, we decided to officially change
+        our name to IDentiFUR™. Since 2014, we have made over 300+ Fursonal IDs™
+        and counting!
+      </div>
+      <div>
+        <figure>
+          <Image
+            src={originalCards}
+            width={400}
+            alt="A photo of the IDentiFUR team"
+          />
+          <figcaption>Original Fursonal ID's™ 2002-2014 Layout</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="grid">
+      <div>
+        <figure>
+          <Image
+            src={originalCards2}
+            width={400}
+            alt="A photo of the IDentiFUR team"
+          />
+          <figcaption>Fursonal ID's™ 2014 Layout</figcaption>
+        </figure>
+      </div>
+      <div>
+        In 2014, The Fursonal ID™ design was re-imagined to add more color,
+        details, and customization options. It was offered in both horizontal &
+        vertical layouts.
+        <br />
+        <br />
+        With technology evolving over the years, the company was finally able to
+        make the product they originally intended to sell since day one. Now placing
+        them on PVC cards does not change the product that was originally sold, but
+        enhances the dream that the creators had wished for. We considered this a
+        jump forward for selling novelty items for the community.
+      </div>
+    </div>
+    <div class="grid">
+      <div>
+        Jump up to 2024, after a short hiatus due to the pandemic, IDentiFUR™
+        revised their work load and decided to shrink it back down to only the
+        Fursonal ID™ products ( for now! ). <br /><br />
+        The design changed once again to a more modern look, clearer information,
+        more options for customization, and updated artwork! <br /><br />We
+        would like to thank everyone that has been with us since day one in
+        2002. It means a ton to us as creators! Seriously.. Thank you!
+      </div>
+      <div>
+        <figure>
+          <Image
+            src={originalCards3}
+            width={400}
+            alt="A photo of the IDentiFUR team"
+          />
+          <figcaption>Fursonal ID™ Layout 2024</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .grid:nth-of-type(1) img:first-child,
+  .grid:nth-of-type(3) img:first-child {
+    transform: rotateZ(6deg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .grid:nth-of-type(1) figcaption,
+  .grid:nth-of-type(3) figcaption {
+    transform: rotateZ(6deg);
+  }
+  .grid:nth-of-type(2) img:first-child {
+    transform: rotateZ(-6deg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .grid:nth-of-type(2) figcaption {
+    transform: rotateZ(-6deg);
+  }
+  figcaption {
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+  }
+  .grid{
+    margin: 2rem 0;
+  }
+</style>

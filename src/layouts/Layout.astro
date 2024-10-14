@@ -1,50 +1,184 @@
 ---
+import Navbar from "@components/Navbar.astro";
+import Footer from "@components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+import '@fontsource-variable/nunito';
+
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} - {import.meta.env.ASTRO_PROJECT_NAME}</title>
+  </head>
+  <body>
+    <ViewTransitions />
+    <main class="container">
+      <Navbar />
+      <slot />
+      <Footer />
+    </main>
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    font-size: 16px;
+    font-family:
+      "Nunito Variable",
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+	  background-color: #fefefe;
+    /* background-image: url("/paws.png");
+    background-repeat: repeat;
+    background-size: 1600px 1600px;
+    background-position: center; */
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+    font-weight: 700;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  article{
+    margin-top: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+  }
+  li {
+    position: relative;
+  }
+  li a {
+    text-decoration: none;
+    color: inherit;
+    padding: 5px 10px;
+  }
+  li a:hover {
+    text-decoration: underline;
+  }
+  li ul {
+    width: auto;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  li:hover ul {
+    display: block;
+  }
+  li ul li {
+    width: 100%;
+  }
+  li ul li a {
+    padding: 10px;
+    display: block;
+    white-space: nowrap;
+    
+  }
+  li ul li a:hover {
+    border-radius: 10px;
+    background-color: #f2f2f2;
+  }
+  .container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+  }
+  .active {
+	text-decoration: underline;
+	
+  }
+  .image, img {
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  height: auto;
+  }
+  small {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+    display: block;
+    font-style: italic;
+    text-align: center;
+  }
+  .hero-image {
+    margin: 0;
+    text-align: center;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    gap: 1rem;
+  }
+  .icon{
+    width: 2rem;
+    height: 2rem;
+    /* fill: none; */
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .icon:hover{
+    transform: translateY(-4px);
+  }
+
+  /* DETALLES */
+
+  details {
+    margin-top: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    background-color: #fff;
+  }
+  summary {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 </style>

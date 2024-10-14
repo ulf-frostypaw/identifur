@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import exampleCard from "../../assets/images/example.png";
+//import placeholderImage from "//placehold.co/400.png";
+---
+
+<Layout title="About us">
+  <article>
+    <h1>Who is IDentiFUR?</h1>
+
+    <p>
+      IDentiFUR&TRADE; is a novelty ID card making business for the furry
+      fandom. We specialize in our product called the "Fursonal ID&TRADE;" which
+      originated in 2002. We may offer other types of cards and badges in the
+      future.
+    </p>
+
+    <h2>What is a Fursonal ID?</h2>
+    <p>
+      Ever wanted to pull out your very own furry identification card? Now you
+      can with these fun IDs! These IDs are novelty furry identification cards
+      that fit in your wallet. Each one is customized with personal artwork and
+      information, then printed on a PVC card. Customers can pick out their
+      information, their ID photo, social media link, their signature and so
+      much more! A truly unique way to show off your furry side that fits inside
+      your wallet or purse!
+    </p>
+  </article>
+
+  <figure>
+    <Image src={exampleCard} width={700} alt="Fursonal ID" class="image" />
+    <small>Example use image</small>
+  </figure>
+  <h1>Did you know us?</h1>
+  <div class="grid">
+    <div>
+      <figure class="">
+        <img src="https://placehold.co/400" alt="" srcset="" />
+      </figure>
+    </div>
+    <div>
+      <figure>
+        <img src="https://placehold.co/400" alt="" srcset="" />
+      </figure>
+    </div>
+  </div>
+</Layout>
